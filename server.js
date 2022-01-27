@@ -21,7 +21,7 @@ const port = minimist.port || process.env.PORT || 3000
 // If there is an error, put it on the console error, return, and exit with error code 1. 
 // Do not be nice about exiting.
 fs.readFile('./www/index.html', 'utf8', (err, data) => {
-    if(err){
+    if (err) {
         console.error(err)
         return
     }
@@ -32,14 +32,14 @@ fs.readFile('./www/index.html', 'utf8', (err, data) => {
 // 1. status code 200, 
 // 2. set a header with content type `text/html`, and 
 // 3. end with the data that you are reading in from ./www/index.html.
-    const server = http.createServer((req, res) =>{
-        res.statusCode = 200;
+    const server = http.createServer((req, res) => {
+        res.statusCode = 200
         res.setHeader('Content-Type', 'text/html')
         res.end(data);
     })
-    server.listen(port, () => {
-        console.log('Server listening on port ${port}')
-    })
+        server.listen(port, () => {
+            console.log(`Server listening on port ${port}`)
+        })
 // Used documentation from https://nodejs.dev/learn/build-an-http-server
 })
 
