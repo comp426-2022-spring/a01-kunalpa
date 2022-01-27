@@ -9,10 +9,10 @@ const fs = require('fs')
 const minimist = require('minimist')(process.argv.slice(2))
 
 // Define allowed argument name 'port'.
-args["port"]
+minimist["port"]
 // Define a const `port` using the argument from the command line. 
 // Make this const default to port 3000 if there is no argument given for `--port`.
-const port = args.port || 3000 || process.env.PORT;
+const port = minimist.port || 3000 || process.env.PORT;
 
 // Use the fs module to create an arrow function using `fs.readFile`.
 fs.readFile();
